@@ -9,5 +9,10 @@ use Illuminate\Routing\Controller as BaseController;
 
 class Controller extends BaseController
 {
+    public function Login()
+    {
+        return view('auth.login');
+    }
+
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 }
