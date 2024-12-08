@@ -30,11 +30,35 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
+        $input=$request->validate([
+            'username' => ['required',
+                           'min:2','max:12'],
+
+            'mail' => ['required',
+                       'min:5','max:40',
+                       'unique:users',
+                       'string','email:strict,dns,spoof','max:255','unique:users'],
+
+            'password' => ['required',
+                           'alpha_dash',
+                           'min:8','max:20'],
+
+            'password_confirmation' => ['confirmed:password'],
+        ]);
+
             $user = User::create([
             'username' => $request->username,
             'mail' => $request->mail,
             'password' => Hash::make($request->password),
         ]);
+
+        return [
+          'username.required' => 'ユーザー名は必須です。',
+          'email.required' => 'メールアドレスは必須です。',
+          'email.unique' => 'メールアドレスはすでに使用されています。',
+          'password' => 'パスワードは必須です。',
+          'password_confirmation' => 'パスワードが一致していません。',
+        ];
 
             return redirect('added');
     }
