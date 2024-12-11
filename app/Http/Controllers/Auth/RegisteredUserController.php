@@ -35,9 +35,8 @@ class RegisteredUserController extends Controller
                            'min:2','max:12'],
 
             'mail' => ['required',
-                       'min:5','max:40',
-                       'unique:users',
-                       'string','email:strict,dns,spoof','max:255','unique:users'],
+                       'min:5','max:40','unique:users',
+                       'string','email:strict','dns','spoof'],
 
             'password' => ['required',
                            'alpha_dash',
@@ -54,8 +53,8 @@ class RegisteredUserController extends Controller
 
         return [
           'username.required' => 'ユーザー名は必須です。',
-          'email.required' => 'メールアドレスは必須です。',
-          'email.unique' => 'メールアドレスはすでに使用されています。',
+          'mail.required' => 'メールアドレスは必須です。',
+          'mail.unique' => 'メールアドレスはすでに使用されています。',
           'password' => 'パスワードは必須です。',
           'password_confirmation' => 'パスワードが一致していません。',
         ];
