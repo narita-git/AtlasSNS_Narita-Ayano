@@ -3,6 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\PostsController;
+use App\Http\Controllers\FollowsController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,10 +23,16 @@ use Illuminate\Support\Facades\Route;
 require __DIR__ . '/auth.php';
 
 Route::get('top', [PostsController::class, 'index']);
+Route::get('top', [AuthenticatedSessionController::class, 'navigation']);
 
-Route::get('profile', [ProfileController::class, 'profile']);
+Route::get('profile', [ProfileController::class, 'profile'])->name('profiles.profile');
+// Route::get通信('URLの部品', [行先のController::class, 'profileメソッド'])->name('このルートの名前');
 
-Route::get('search', [UsersController::class, 'index']);
+Route::post('profile', [ProfileController::class, 'profile'])->name('profile.update');
 
-Route::get('follow-list', [PostsController::class, 'index']);
-Route::get('follower-list', [PostsController::class, 'index']);
+Route::get('search', [UsersController::class, 'search']);
+
+Route::get('follow-list', [FollowsController::class, 'followList']);
+Route::get('follower-list', [FollowsController::class, 'followerList']);
+
+Route::get('logout',[AuthenticatedSessionController::class,'destroy']);

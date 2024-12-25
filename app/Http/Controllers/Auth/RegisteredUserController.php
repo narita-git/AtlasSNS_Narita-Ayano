@@ -30,36 +30,38 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-        $input=$request->validate([
+        // dd($request);
+            $input=$request->validate([
             'username' => ['required',
                            'min:2','max:12'],
 
-            'mail' => ['required',
+            'email' => ['required',
                        'min:5','max:40','unique:users',
-                       'string','email:strict','dns','spoof'],
+                       'email'],
 
-            'password' => ['required',
-                           'alpha_dash',
+            'password' => ['confirmed','required',
+                           'regex:/^[a-zA-Z0-9]+$/',
                            'min:8','max:20'],
-
-            'password_confirmation' => ['confirmed:password'],
         ]);
 
             $user = User::create([
             'username' => $request->username,
-            'mail' => $request->mail,
+            'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
 
-        return [
-          'username.required' => 'ユーザー名は必須です。',
-          'mail.required' => 'メールアドレスは必須です。',
-          'mail.unique' => 'メールアドレスはすでに使用されています。',
-          'password' => 'パスワードは必須です。',
-          'password_confirmation' => 'パスワードが一致していません。',
-        ];
+        // return [
+        //   'username.required' => 'ユーザー名は必須です。',
+        //   'email.required' => 'メールアドレスは必須です。',
+        //   'email.unique' => 'メールアドレスはすでに使用されています。',
+        //   'password' => 'パスワードは必須です。',
+        //   'password_confirmation' => 'パスワードが一致していません。',
+        // ];
 
-            return redirect('added');
+        // フォームから送信された名前をSessionに保存
+        $request->session()->put('username', $request->input('username'));
+        // 次のページにリダイレクト
+        return redirect('added');
     }
 
     public function added(): View

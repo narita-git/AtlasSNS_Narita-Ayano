@@ -1,22 +1,111 @@
 @charset "utf-8";
-html{
-}
-body{
-}
+
+html {}
+
+body {}
+
 /* header */
-header{
-    background:#186AC9;
+header {
+    background: #186AC9;
+    height: 100px;
+}
+
+#head {
+    display: flex;
+    justify-content: space-between;
+}
+
+h1 img {
+    width: auto;
+    height: 50px;
+}
+
+
+/*アコーディオン全体*/
+.menu {
+    display: flex;
+    align-items: center;
+
+}
+
+.menu ul {
+    margin-top: 100px;
+
+}
+
+.menu input {
+    display: none;
+}
+
+/*バー部分*/
+.menu label {
+    cursor: pointer;
+    text-decoration: none;
+    line-height: 1;
+    position: relative;
+    margin: 0 0 10px;
+    padding: 10px;
+}
+
+/*開いたときに表示される部分*/
+
+.menu li {
+    height: 0;
+    overflow-y: hidden;
+}
+
+#menu_bar01:checked~#links01 li {
+    height: auto;
+}
+
+/*閉じた状態の矢印描画*/
+.menu label:after {
+    content: "";
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-top: #fff 2px solid;
+    border-right: #fff 2px solid;
+    -webkit-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    transform: rotate(135deg);
+    position: absolute;
+    right: 2%;
+    top: 0;
+    bottom: 15%;
+    margin: auto;
+}
+
+/*開いた状態の矢印描画*/
+.menu input[type=checkbox]:checked+label:after {
+    content: "";
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-top: #fff 2px solid;
+    border-right: #fff 2px solid;
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    position: absolute;
+    right: 2%;
+    top: 7%;
+    bottom: 0;
+    margin: auto;
 }
 
 /* main content */
-#row{
+#row {
     display: flex;
     flex-flow: row wrap;
+    justify-content: space-between;
 }
-#container{
+
+#container {
     flex: 0 0 80%;
 }
-#side-bar{
+
+#side-bar {
     flex: 0 0 19%;
     border-left: 1px solid #727272;
 }

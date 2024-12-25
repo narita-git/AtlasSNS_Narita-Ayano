@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
+
 class AuthenticatedSessionController extends Controller
 {
     /**
@@ -18,6 +19,11 @@ class AuthenticatedSessionController extends Controller
     public function create()
     {
         return view("auth.login");
+    }
+
+    public function navigation()
+    {
+        return view("layouts.navigation");
     }
 
     /**
@@ -29,7 +35,7 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+        return redirect('/top');
     }
 
     /**
@@ -43,6 +49,6 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return redirect('/login');
     }
 }
