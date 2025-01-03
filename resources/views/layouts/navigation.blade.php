@@ -1,14 +1,13 @@
         <div id="head">
             <h1>
-                <a href=top><img src="images/atlas.png"></a>
+                <a href="top"><img src="images/atlas.png"></a>
             </h1>
-            <div class="menu">
+            <div id="menu">
                 <div id="name">
                     <p>{{ session('username') }}さん</p>
                 </div>
-                <input type="checkbox" id="menu_bar01" />
-                <label for="menu_bar01"></label>
-                <ul id="links01">
+                <div id="arrow"></div>
+                <ul class="arrow_active">
                     <li><a href="top">ホーム</a></li>
                     <li><a href="{{route('profiles.profile')}}">プロフィール</a></li>
                     <?php

@@ -24,8 +24,11 @@
     </head>
     <body>
         <header>
-            <h1><img src="images/atlas.png"></h1>
-            <p>Social Network Service</p>
+            <h1>
+                <img src="images/atlas.png">
+                <br>
+                Social Network Service
+            </h1>
         </header>
         <div id="container">
             {{ $slot }}

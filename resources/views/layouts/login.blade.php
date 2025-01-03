@@ -35,19 +35,23 @@
     </div>
     <div id="side-bar">
       <div id="confirm">
-        <p>{{ session('username') }}さんの</p>
-        <div>
+        <div id="my_name">
+        <p>{{ session('username') }}adminさんの</p>
+        </div>
+        <div id="follow">
           <p>フォロー数</p>
-          <p>〇〇名</p>
+          <p>12人</p>
         </div>
         <p class="btn"><a href="follow-list">フォローリスト</a></p>
-        <div>
+        <div id="follower">
           <p>フォロワー数</p>
-          <p>〇〇名</p>
+          <p>20人</p>
         </div>
         <p class="btn"><a href="follower-list">フォロワーリスト</a></p>
       </div>
-      <p class="btn"><a href="search">ユーザー検索</a></p>
+      <div id="search">
+        <p class="btn"><a href="search">ユーザー検索</a></p>
+      </div>
     </div>
   </div>
   <footer>
