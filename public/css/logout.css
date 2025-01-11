@@ -6,14 +6,12 @@ html {
 
 /* 共通 */
 #container,
-#login-form,
 h1 {
     text-align: center;
 }
 
 li label,
-input.input,
-#btn {
+input.input {
     width: 80%;
 }
 
@@ -21,6 +19,7 @@ body {
     padding: 5%;
     height: 100%;
     place-items: center;
+    position: relative;
     background: -moz-linear-gradient(top, #186AC9 30%, #1E90FF 50%, #fff200);
     background: -webkit-linear-gradient(top, #186AC9 30%, #1E90FF 50%, #fff200);
     background: linear-gradient(to bottom, #186AC9 30%, #1E90FF 50%, #fff200);
@@ -29,23 +28,20 @@ body {
 
 /* ログインページ */
 /* 新規ユーザー登録ページ */
-#login-form {
+#container {
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
     background: rgba(130, 130, 130, 0.5);
     border-radius: 5% 5%;
-    width: 30%;
-    margin: auto;
-    padding-top: 4px;
-    padding-bottom: 4px;
-    margin-top: 2%;
-}
-
-#container {
-    width: 87%;
-    margin: auto;
+    padding: 1% 2% 1% 2%;
 }
 
 h1 {
-    margin-top: 3%;
     font-weight: bold;
 }
 
@@ -53,18 +49,26 @@ h1 img {
     max-width: 150px;
 }
 
+.login-h4 {
+    padding-top: 10%;
+}
 
 form {
     text-align: center;
 }
 
+.clear-h4 {
+    padding-top: 20px;
+}
 
-ul li {
-    margin: auto;
-    text-align: center;
+.clear-text {
+    text-align: left;
+    margin-top: 20%;
+    margin-bottom: 20%;
 }
 
 li label {
+    width: 100%;
     margin-top: 5%;
     margin-bottom: 0;
     text-align: left;
@@ -72,22 +76,49 @@ li label {
 
 input.input {
     height: 35px;
+    width: 100%;
     border-radius: 7px 7px;
     border: solid 1px #727272;
     color: #000000;
 }
 
-input.btn {
+input.btn,
+.btn {
     background-color: #f74f4f;
     width: 50%;
     border-radius: 7px 7px;
     padding: 7px;
 }
 
+.login-btn {
+    background-color: #f74f4f;
+    width: 60%;
+    margin: auto;
+    border-radius: 7px 7px;
+    padding: 3%;
+    margin-bottom: 10%;
+}
+
+.login-btn a {
+    border: none;
+}
+
 #btn {
     text-align: right;
-    margin: auto;
     margin-top: 6%;
+}
+
+.btn {
+    margin-bottom: 10%;
+}
+
+.register {
+    padding-bottom: 7%;
+}
+
+#clear {
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 a {
@@ -100,9 +131,6 @@ p {
 }
 
 /* 新規ユーザー登録ページ */
-h3 {
-    margin-bottom: 8%;
-}
 
 .alert {
     background-color: #00000000;

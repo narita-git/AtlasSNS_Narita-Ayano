@@ -31,31 +31,69 @@ h1 img {
     margin-top: 11px;
 }
 
+/* 共通 */
+.arrow_list,
+.list_center {
+    padding-top: 13%;
+    padding-bottom: 13%;
+}
+
 /*アコーディオン全体*/
 #menu {
     display: flex;
-    vertical-align: middle;
     align-items: center;
 }
 
-/*開いたときに表示される部分*/
-
-#menu li {
-    height: 0;
-    overflow-y: hidden;
-}
-
-#arrow {
-    position: relative;
+#menu img {
     margin-left: 40px;
 }
 
-#arrow.arrow_active {
-    padding: 40px;
-    border: 1px solid #ccc;
+.arrow {
+    position: relative;
+    margin-left: 40px;
+    width: 20px;
+    height: 20px;
+    display: flex;
 }
 
-#arrow::after {
+.arrow_box {
+    z-index: 30;
+    position: absolute;
+    border: solid 2px #186AC9;
+    text-align: center;
+    font-size: 25px;
+    width: 20%;
+    right: 1px;
+    top: 100px
+}
+
+.arrow_box.active {
+    display: none;
+}
+
+.arrow_list {
+    border-top: solid 2px #186AC9;
+    background-color: #fff;
+    display: none;
+}
+
+.arrow_list a {
+    color: #727272;
+}
+
+.list_center {
+    background-color: darkblue;
+}
+
+
+.arrow_box,
+.arrow_list,
+.list_center .active {
+    display: block;
+}
+
+.arrow.active:before {
+    display: inline-block;
     content: "";
     margin: auto;
     position: absolute;
@@ -74,7 +112,8 @@ h1 img {
     /* くの字の向き */
 }
 
-#arrow::before {
+.arrow:before {
+    display: inline-block;
     content: "";
     margin: auto;
     position: absolute;
