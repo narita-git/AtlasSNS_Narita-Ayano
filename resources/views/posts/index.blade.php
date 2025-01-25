@@ -1,10 +1,11 @@
 <x-login-layout>
 <section>
-  <section class="h2">
-    <img src="images/icon1.png">投稿内容を入力してください。
+  <!-- <section class="h2"> -->
+    <img src="images/icon1.png">
+    <textarea placeholder="投稿内容を入力してください。"></textarea>
   </section>
   <div id="post">
-    <img src="images/post.png">
+    <button type="button"> <img src="images/post.png"></button>
   </div>
 </section>
 <article>
@@ -23,18 +24,28 @@
         トップでは自分がフォローしている人の投稿も見ることができるようにします。</p>
   </div>
   <div id="side_icon">
-    <a href="">
-      <button id="edit_btn" type="submit">
+      <button id="edit_btn">
           <img src="images/edit.png">
       </button>
-    </a>
-    <a href="">
-      <button id="trash-h_btn" type="submit">
-        <img src="images/trash-h.png">
+      <button class="trash-h_btn" data-dialog="trash">
+        <img src="images/trash.png" alt="1">
+        <img src="images/trash-h.png" alt="2">
       </button>
-    </a>
   </div>
 </article>
+
+<dialog id="edit">
+  <div class="edit_text">
+  <p>自分が投稿した内容を表示します。</p>
+  <p>投稿は最大150文字までとし、それ以上のテキストが入力フォームに打ち込まれた場合は投稿できないように設定をしてください。</p>
+  <p class="font_red">編集画面が開いた際に、選択された投稿内容が初期で入っているようにする。<br>
+  最大150字までとする。<br>
+  編集ボタンを押したら編集内容を保存してTOPページを再読み込みする。</p>
+  </div>
+  <div class="edit_icon">
+  <button class="edit_close"><img src="images/edit.png"></button>
+  </div>
+</dialog>
 
 <article>
   <div id="comment">

@@ -1,7 +1,7 @@
 <x-login-layout>
 <div id="profile">
     <img src="images/icon1.png">
-    <form action="/navigation" name->
+    <form action="/navigation" method="post" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
             <h3>ユーザー名</h3>
@@ -25,15 +25,17 @@
 
         <div class="form-group">
             <h3>自己紹介</h3>
-            <input id="my_profile" type="password" class="form-controller" required autocomplete="new-password">
+            <input id="my_profile" class="form-controller">
         </div>
 
         <div class="form-group">
             <h3>アイコン画像</h3>
             <div id="icon">
             <label>
-            <input type="file" name="file">
-            ファイルを選択</label>
+                <input type="file" class="file" ファイルを選択>
+
+
+            </label>
             </div>
         </div>
     </form>

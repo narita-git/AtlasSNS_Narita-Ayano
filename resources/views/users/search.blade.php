@@ -1,11 +1,9 @@
 <x-login-layout>
   <div id="search_top">
-    <form method="get" id="search_box" action="自分のサイトURL">
-      <input id="input_form" name="s" type="text" placeholder="ユーザー名">
+    <form method="get" id="search_box" action="http://127.0.0.1:8000/search">
+      <input id="input_form" type="search" value="{{request('search')}}"name="search" placeholder="ユーザー名">
     </form>
-    <button id="search_btn" type="submit">
-      <img src="images/search.png">
-    </button>
+    <input type="image" id="search_btn" src="images/search.png" alt="検索">
   </div>
     <ul class="search_list">
       <li>

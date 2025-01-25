@@ -1,4 +1,11 @@
-        <div id="head">
+<dialog id="trash">
+  <p>この投稿を削除します。よろしいでしょうか？</p>
+  <div id="dialog_button">
+  <button id="OK">OK</button>
+  <button id="close">キャンセル</button>
+  </div>
+</dialog>
+       <div id="head">
             <h1>
                 <a href="top"><img src="images/atlas.png"></a>
             </h1>
