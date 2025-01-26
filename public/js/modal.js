@@ -1,10 +1,10 @@
 var dialog = document.querySelector('dialog');
 
-var btn_show = document.getElementById('.trash-h_btn');
+var btn_show = document.getElementById('#trash');
 
-var btn_OK = document.getElementById('OK');
+var btn_OK = document.getElementById('#OK');
 
-var btn_close = document.getElementById('close');
+var btn_close = document.getElementById('#close');
 
 btn_show.addEventListener('click', function () {
   dialog.show();

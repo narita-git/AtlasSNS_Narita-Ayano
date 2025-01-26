@@ -242,7 +242,7 @@ h3 img {
     float: right;
 }
 
-#edit_btn,
+.edit_btn,
 .trash-h_btn {
     border: none;
     background-color: #00000000;

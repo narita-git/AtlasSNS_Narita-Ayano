@@ -24,10 +24,10 @@
         トップでは自分がフォローしている人の投稿も見ることができるようにします。</p>
   </div>
   <div id="side_icon">
-      <button id="edit_btn">
+      <button class="edit_btn"  data-dialog="#edit">
           <img src="images/edit.png">
       </button>
-      <button class="trash-h_btn" data-dialog="trash">
+      <button class="trash-h_btn" data-dialog="#trash">
         <img src="images/trash.png" alt="1">
         <img src="images/trash-h.png" alt="2">
       </button>
