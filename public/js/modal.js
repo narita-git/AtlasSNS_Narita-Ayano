@@ -1,19 +1,11 @@
-var dialog = document.querySelector('#edit');
+const openButton = document.getElementById('edit_btn');
+const closeButton = document.getElementById('edit_close');
+const dialog = document.getElementById('edit');
 
-var btn_show = document.getElementById('.edit_btn');
+openButton.addEventListener('click', () => {
+  dialog.showModal();
+});
 
-var btn_OK = document.getElementById('#OK');
-
-var btn_close = document.getElementById('.edit_close');
-
-btn_show.addEventListener('click', function () {
-  dialog.show();
-}, false);
-
-btn_OK.addEventListener('click', function () {
+closeButton.addEventListener('click', () => {
   dialog.close();
-}, false);
-
-btn_close.addEventListener('click', function () {
-  dialog.close();
-}, false);
+});

@@ -133,7 +133,6 @@ h1 img {
 }
 
 /* 共通 */
-#post,
 #follow_top,
 #search_top {
     border-bottom: solid 7px #dcdcdc;
@@ -156,8 +155,6 @@ h1 img {
     max-width: 50px;
 }
 
-.edit_btn img {}
-
 .form-controller,
 .form-control,
 #icon {
@@ -173,10 +170,11 @@ h1 img {
 }
 
 /* 投稿編集ページ */
-section {
-    margin-left: 10%;
+.post_form {
+    padding-left: 10%;
     margin-top: 30px;
     align-items: center;
+    border-bottom: solid 7px #dcdcdc;
 }
 
 textarea {
@@ -244,10 +242,35 @@ h3 img {
     float: right;
 }
 
-.edit_btn,
-.trash-h_btn {
+#edit_btn,
+.trash-h_btn,
+#edit_close {
     border: none;
     background-color: #00000000;
+}
+
+#edit {
+    border: none;
+    text-align: center;
+    width: 850px;
+    height: 330px;
+    padding: 2%;
+    border-radius: 10px 10px;
+}
+
+.edit_text {
+    border: 1px solid #727272;
+    padding: 10px;
+}
+
+#edit_left {
+    text-align: left;
+}
+
+#edit_close img {
+    display: block;
+    margin: auto;
+    margin-top: 20px;
 }
 
 .trash-h_btn {
@@ -266,22 +289,6 @@ h3 img {
     position: absolute;
     opacity: 0;
 }
-
-/* モーダル */
-/* dialog p {
-    text-align: left;
-    margin-top: 3%;
-}
-
-#OK,
-#close {
-    background-color: #fff;
-    border: solid 2px #000000;
-    width: 100px;
-    height: 40px;
-    align-items: center;
-    border-radius: 10px;
-} */
 
 /* main content */
 #row {
