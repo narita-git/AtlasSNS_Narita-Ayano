@@ -1,10 +1,10 @@
-var dialog = document.querySelector('dialog');
+var dialog = document.querySelector('#edit');
 
-var btn_show = document.getElementById('#trash');
+var btn_show = document.getElementById('.edit_btn');
 
 var btn_OK = document.getElementById('#OK');
 
-var btn_close = document.getElementById('#close');
+var btn_close = document.getElementById('.edit_close');
 
 btn_show.addEventListener('click', function () {
   dialog.show();
@@ -17,16 +17,3 @@ btn_OK.addEventListener('click', function () {
 btn_close.addEventListener('click', function () {
   dialog.close();
 }, false);
-
-// モーダルedit
-// var btn_show = document.getElementById('edit_btn');
-
-// var btn_close = document.getElementById('edit_close');
-
-// btn_show.addEventListener('click', function () {
-//   dialog.show();
-// }, false);
-
-// btn_close.addEventListener('click', function () {
-//   dialog.close();
-// }, false);

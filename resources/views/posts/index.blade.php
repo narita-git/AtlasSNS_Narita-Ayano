@@ -24,12 +24,14 @@
         トップでは自分がフォローしている人の投稿も見ることができるようにします。</p>
   </div>
   <div id="side_icon">
-      <button class="edit_btn"  data-dialog="#edit">
+      <button class="edit_btn">
           <img src="images/edit.png">
       </button>
-      <button class="trash-h_btn" data-dialog="#trash">
-        <img src="images/trash.png" alt="1">
-        <img src="images/trash-h.png" alt="2">
+      <button class="trash-h_btn">
+         <a href="images/trash.png"onclick="return confirm('この投稿を削除します。よろしいでしょうか？')">
+          <img src="images/trash.png">
+          <img src="images/trash-h.png">
+         </a>
       </button>
   </div>
 </article>

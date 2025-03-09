@@ -156,6 +156,8 @@ h1 img {
     max-width: 50px;
 }
 
+.edit_btn img {}
+
 .form-controller,
 .form-control,
 #icon {
@@ -250,9 +252,8 @@ h3 img {
 
 .trash-h_btn {
     position: relative;
-    width: 280px;
     height: 80px;
-    margin: 0 auto;
+    margin-right: 50px;
     cursor: pointer;
 }
 
@@ -267,12 +268,7 @@ h3 img {
 }
 
 /* モーダル */
-dialog.trash {
-    width: 30%;
-    border: solid 2px #BBBBBB;
-}
-
-dialog p {
+/* dialog p {
     text-align: left;
     margin-top: 3%;
 }
@@ -285,14 +281,7 @@ dialog p {
     height: 40px;
     align-items: center;
     border-radius: 10px;
-}
-
-#dialog_button {
-    width: 100%;
-    margin-top: 8%;
-    margin-left: auto;
-    text-align: right;
-}
+} */
 
 /* main content */
 #row {
